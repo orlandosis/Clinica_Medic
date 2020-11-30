@@ -17,7 +17,7 @@ namespace Clinica_Medic.Controllers
 {
     public class HomeController : Controller
     {
-        //IServiceProvid _serviceProvider;
+        //IServicePro _serviceProvider;
         private static InputModelLogin _model;
         private LUser _user;
         private SignInManager<IdentityUser> _signInManager;
