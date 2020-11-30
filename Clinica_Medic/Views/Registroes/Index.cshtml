@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Clinica_Medic.Models.Registro>
+
+@{
+    ViewData["Title"] = "Registro";
+}
+
+
+
+<p>
+    <a class="btn btn-success" asp-action="Create">Añadir Registro</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Dpi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Apellido)
+            </th>
+            <th>
+               Fecha de Nacimiento
+            </th>
+            <th>
+                Tipo Sangre
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dpi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Apellido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fecha_nacimiento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tipo_sangre)
+            </td>
+            <td>
+                
+                <a class="btn btn-warning" asp-action="Details" asp-route-id="@item.Id">Detalles</a> 
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
